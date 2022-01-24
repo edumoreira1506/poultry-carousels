@@ -21,7 +21,8 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
   poultries = [],
   title,
   breederId,
-  onViewPoultry
+  onViewPoultry,
+  onEditPoultry
 }: PoultriesCarouselProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [modalImages, setModalImages] = useState<{ original: string; thumbnail: string; }[]>([])
@@ -32,7 +33,11 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
 
   const handleViewPoultry = useCallback((poultryId: string) => {
     onViewPoultry?.({ breederId, poultryId })
-  }, [breederId])
+  }, [breederId, onViewPoultry])
+
+  const handleEditPoultry = useCallback((poultryId: string) => {
+    onEditPoultry?.({ breederId, poultryId })
+  }, [breederId, onEditPoultry])
 
   const formattedPoultries = useMemo(() => poultries.map((poultry) => ({
     ...poultry,
@@ -67,6 +72,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
           onClickImage={handleClickImage}
           poultries={formattedPoultries}
           onViewPoultry={handleViewPoultry}
+          onEditPoultry={handleEditPoultry}
         />
       </StyledCarousel>
     </StyledContainer>
