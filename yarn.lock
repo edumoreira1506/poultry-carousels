@@ -1157,6 +1157,30 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@cig-platform/content-search-client@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@cig-platform/content-search-client/-/content-search-client-0.0.9.tgz#b9076ead46dc070d38624feb19e6b1d5cc4ca212"
+  integrity sha512-dKqPYQwSRqtuGywVZ8j8KqkISMUsM1oi8agbQy5Hmlf4Nh1zD04KG0L8b5ANUibHQ68QX43N6VQVNpS26gKI5A==
+  dependencies:
+    "@babel/plugin-proposal-decorators" "^7.16.4"
+    "@cig-platform/decorators" "^0.0.1"
+    "@cig-platform/types" "^0.0.21"
+    axios "^0.24.0"
+
+"@cig-platform/decorators@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@cig-platform/decorators/-/decorators-0.0.1.tgz#6714481803ed94e8c46a68f51bd207b3129f6462"
+  integrity sha512-gJXseewZipGW7ONTVH566/YwkGIGn5fHKZD8BNrxDKMZVuQjw+764hElgujXg3q0D4u2Mw4rmhup7Ft5sWfhqQ==
+  dependencies:
+    axios "^0.22.0"
+
+"@cig-platform/types@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.21.tgz#afc8048208bb496c6a8d196ddd9a20ca04a26129"
+  integrity sha512-kBFoYTi4ZA2xzCVGoVzJRQOLZBIpngTCSwimEwo30XmVzTICJzwceRy5Es0m5dZ7E0EULvJXYY+PMPNUJVlRiA==
+  dependencies:
+    express "^4.17.1"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.4.tgz"
@@ -4109,6 +4133,20 @@ axe-core@^4.3.5:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.3.5.tgz"
   integrity sha512-WKTW1+xAzhMS5dJsxWkliixlO/PqC4VhmO9T4juNYcaTg9jzWiJsou6m5pxWYGfigWbwzJWeFY6z47a+4neRXA==
 
+axios@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.22.0.tgz#bf702c41fb50fbca4539589d839a077117b79b25"
+  integrity sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==
+  dependencies:
+    follow-redirects "^1.14.4"
+
+axios@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+  dependencies:
+    follow-redirects "^1.14.4"
+
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/axobject-query/-/axobject-query-2.2.0.tgz"
@@ -6929,7 +6967,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.14.4:
   version "1.14.7"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.7.tgz"
   integrity sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
