@@ -10,12 +10,19 @@ export interface PoultryCarouselsContainerProps {
 const PoultryCarouselsContainer: VFC<PoultryCarouselsContainerProps> = ({
   breederId,
 }: PoultryCarouselsContainerProps) => {
-  const { isLoading } = useData(breederId)
+  const { data, isLoading } = useData(breederId)
 
   if (isLoading) return null
 
   return (
-    <PoultryCarousels />
+    <PoultryCarousels
+      breederId={breederId}
+      forSale={data?.forSale}
+      reproductives={data?.reproductives}
+      matrixes={data?.matrixes}
+      males={data?.males}
+      females={data?.females}
+    />
   )
 }
 
