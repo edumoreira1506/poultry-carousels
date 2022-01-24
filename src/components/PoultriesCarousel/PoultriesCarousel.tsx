@@ -71,8 +71,8 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
         <UIPoultriesCarousel
           onClickImage={handleClickImage}
           poultries={formattedPoultries}
-          onViewPoultry={handleViewPoultry}
-          onEditPoultry={handleEditPoultry}
+          onViewPoultry={onViewPoultry && handleViewPoultry}
+          onEditPoultry={onEditPoultry && handleEditPoultry}
         />
       </StyledCarousel>
     </StyledContainer>
