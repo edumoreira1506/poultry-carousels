@@ -1,6 +1,6 @@
 import React, { VFC } from 'react'
 
-import PoultriesCarousel from '../PoultriesCarousel/PoultriesCarousel'
+import PoultriesCarousel, { PoultriesCarouselProps } from '../PoultriesCarousel/PoultriesCarousel'
 import { Poultry } from '../../hooks/useData'
 
 interface PoultryCarouselsProps {
@@ -10,7 +10,8 @@ interface PoultryCarouselsProps {
   males?: Poultry[];
   females?: Poultry[];
   breederId: string;
-  onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
+  onViewPoultry: PoultriesCarouselProps['onViewPoultry'];
+  onEditPoultry: PoultriesCarouselProps['onEditPoultry'];
 }
 
 const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
@@ -20,7 +21,8 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
   males = [],
   females = [],
   breederId,
-  onViewPoultry
+  onViewPoultry,
+  onEditPoultry
 }: PoultryCarouselsProps) => (
   <>
     {Boolean(forSale.length) && (
@@ -29,6 +31,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         title='À Venda'
         poultries={forSale}
         onViewPoultry={onViewPoultry}
+        onEditPoultry={onEditPoultry}
       />
     )}
 
@@ -38,6 +41,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         title='Reprodutores'
         poultries={reproductives}
         onViewPoultry={onViewPoultry}
+        onEditPoultry={onEditPoultry}
       />
     )}
 
@@ -47,6 +51,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         title='Matrizes'
         poultries={matrixes}
         onViewPoultry={onViewPoultry}
+        onEditPoultry={onEditPoultry}
       />
     )}
 
@@ -56,6 +61,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         title='Frangos'
         poultries={males}
         onViewPoultry={onViewPoultry}
+        onEditPoultry={onEditPoultry}
       />
     )}
 
@@ -65,6 +71,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         title='Frangas'
         poultries={females}
         onViewPoultry={onViewPoultry}
+        onEditPoultry={onEditPoultry}
       />
     )}
   </>

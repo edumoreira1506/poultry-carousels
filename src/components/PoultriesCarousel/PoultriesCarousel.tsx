@@ -9,11 +9,12 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import 'react-image-gallery/styles/css/image-gallery.css'
 
-type PoultriesCarouselProps = {
+export type PoultriesCarouselProps = {
   poultries?: Poultry[];
   title: string;
   breederId: string;
   onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
+  onEditPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
 }
 
 const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({

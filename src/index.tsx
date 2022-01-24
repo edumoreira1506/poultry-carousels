@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import PoultryCarouselsContainer from './containers/PoultryCarouselsContainer/PoultryCarouselsContainer'
+import PoultryCarouselsContainer, { PoultryCarouselsContainerProps } from './containers/PoultryCarouselsContainer/PoultryCarouselsContainer'
 
 const queryClient = new QueryClient()
 
@@ -11,7 +11,8 @@ type Params = {
 }
 
 type Callbacks = {
-  onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
+  onViewPoultry: PoultryCarouselsContainerProps['onViewPoultry'];
+  onEditPoultry: PoultryCarouselsContainerProps['onEditPoultry'];
 }
 
 (window as any).renderPoultryPage = (
@@ -27,6 +28,7 @@ type Callbacks = {
         <PoultryCarouselsContainer
           breederId={params.breederId}
           onViewPoultry={callbacks.onViewPoultry}
+          onEditPoultry={callbacks.onEditPoultry}
         />
       </QueryClientProvider>,
       targetDocument,
