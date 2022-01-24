@@ -15,7 +15,7 @@ type Callbacks = {
   onEditPoultry: PoultryCarouselsContainerProps['onEditPoultry'];
 }
 
-(window as any).renderPoultryPage = (
+(window as any).renderBreederPoultriesPage = (
   containerId: string,
   params: Params,
   callbacks: Callbacks
@@ -36,7 +36,7 @@ type Callbacks = {
   }
 };
 
-(window as any).unmountPoultryPage = (containerId: string) => {
+(window as any).unmountBreederPoultriesPage = (containerId: string) => {
   const targetDocument = document.getElementById(containerId)
 
   if (targetDocument) {
