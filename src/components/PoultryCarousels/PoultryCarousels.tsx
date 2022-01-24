@@ -10,8 +10,8 @@ interface PoultryCarouselsProps {
   males?: Poultry[];
   females?: Poultry[];
   breederId: string;
-  onViewPoultry: PoultriesCarouselProps['onViewPoultry'];
-  onEditPoultry: PoultriesCarouselProps['onEditPoultry'];
+  onViewPoultry?: PoultriesCarouselProps['onViewPoultry'];
+  onEditPoultry?: PoultriesCarouselProps['onEditPoultry'];
 }
 
 const PoultryCarousels: VFC<PoultryCarouselsProps> = ({

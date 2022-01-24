@@ -13,8 +13,8 @@ export type PoultriesCarouselProps = {
   poultries?: Poultry[];
   title: string;
   breederId: string;
-  onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
-  onEditPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
+  onViewPoultry?: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
+  onEditPoultry?: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
 }
 
 const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({

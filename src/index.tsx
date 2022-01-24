@@ -11,14 +11,14 @@ type Params = {
 }
 
 type Callbacks = {
-  onViewPoultry: PoultryCarouselsContainerProps['onViewPoultry'];
-  onEditPoultry: PoultryCarouselsContainerProps['onEditPoultry'];
+  onViewPoultry?: PoultryCarouselsContainerProps['onViewPoultry'];
+  onEditPoultry?: PoultryCarouselsContainerProps['onEditPoultry'];
 }
 
 (window as any).renderBreederPoultriesPage = (
   containerId: string,
   params: Params,
-  callbacks: Callbacks
+  callbacks: Callbacks = {}
 ) => {
   const targetDocument = document.getElementById(containerId)
 
