@@ -5,10 +5,12 @@ import useData from '../../hooks/useData'
 
 export interface PoultryCarouselsContainerProps {
   breederId: string;
+  onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
 }
 
 const PoultryCarouselsContainer: VFC<PoultryCarouselsContainerProps> = ({
   breederId,
+  onViewPoultry,
 }: PoultryCarouselsContainerProps) => {
   const { data, isLoading } = useData(breederId)
 
@@ -22,6 +24,7 @@ const PoultryCarouselsContainer: VFC<PoultryCarouselsContainerProps> = ({
       matrixes={data?.matrixes}
       males={data?.males}
       females={data?.females}
+      onViewPoultry={onViewPoultry}
     />
   )
 }

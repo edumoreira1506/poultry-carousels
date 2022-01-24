@@ -10,6 +10,7 @@ interface PoultryCarouselsProps {
   males?: Poultry[];
   females?: Poultry[];
   breederId: string;
+  onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
 }
 
 const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
@@ -18,7 +19,8 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
   matrixes = [],
   males = [],
   females = [],
-  breederId
+  breederId,
+  onViewPoultry
 }: PoultryCarouselsProps) => (
   <>
     {Boolean(forSale.length) && (
@@ -26,6 +28,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         breederId={breederId}
         title='À Venda'
         poultries={forSale}
+        onViewPoultry={onViewPoultry}
       />
     )}
 
@@ -34,6 +37,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         breederId={breederId}
         title='Reprodutores'
         poultries={reproductives}
+        onViewPoultry={onViewPoultry}
       />
     )}
 
@@ -42,6 +46,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         breederId={breederId}
         title='Matrizes'
         poultries={matrixes}
+        onViewPoultry={onViewPoultry}
       />
     )}
 
@@ -50,6 +55,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         breederId={breederId}
         title='Frangos'
         poultries={males}
+        onViewPoultry={onViewPoultry}
       />
     )}
 
@@ -58,6 +64,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
         breederId={breederId}
         title='Frangas'
         poultries={females}
+        onViewPoultry={onViewPoultry}
       />
     )}
   </>

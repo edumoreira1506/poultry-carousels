@@ -3,7 +3,6 @@ import { ImageGallery, PoultriesCarousel as UIPoultriesCarousel, Modal } from '@
 
 import { StyledCarousel, StyledContainer, StyledTitle } from './PoultriesCarousel.styles'
 import { createImageUrl } from '../../utils/url'
-import { MARKETPLACE_URL } from '../../constants/url'
 import { Poultry } from '../../hooks/useData'
 
 import 'slick-carousel/slick/slick.css'
@@ -14,12 +13,14 @@ type PoultriesCarouselProps = {
   poultries?: Poultry[];
   title: string;
   breederId: string;
+  onViewPoultry: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
 }
 
 const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
   poultries = [],
   title,
-  breederId
+  breederId,
+  onViewPoultry
 }: PoultriesCarouselProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [modalImages, setModalImages] = useState<{ original: string; thumbnail: string; }[]>([])
@@ -29,7 +30,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
   const handleCloseModal = useCallback(() => setIsOpenModal(false), [])
 
   const handleViewPoultry = useCallback((poultryId: string) => {
-    window.location.assign(`${MARKETPLACE_URL}breeders/${breederId}/poultries/${poultryId}`)
+    onViewPoultry?.({ breederId, poultryId })
   }, [breederId])
 
   const formattedPoultries = useMemo(() => poultries.map((poultry) => ({
