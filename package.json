@@ -6,7 +6,7 @@
 		"@cig-platform/content-search-client": "^0.0.11",
 		"@cig-platform/factories": "^0.0.13",
 		"@cig-platform/types": "^0.0.21",
-		"@cig-platform/ui": "^0.1.90",
+		"@cig-platform/ui": "^0.1.100",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^12.0.0",
 		"@testing-library/user-event": "^13.2.1",
