@@ -1232,10 +1232,10 @@
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/ui@^0.1.100":
-  version "0.1.100"
-  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.100.tgz#ae145d2d38ab9167c97913f4713a539f23750528"
-  integrity sha512-DlW79blMUrwezkGSl66bIln9IpA8yUZ4ce/m6SlQWAJ99km5raGnZWf+q9cJrKfki2Z1d5YQ1V9KqpI3/7W1JA==
+"@cig-platform/ui@^0.1.101":
+  version "0.1.101"
+  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.101.tgz#a0bc630ce2cf60c9264bef6796a3243fb8120ba4"
+  integrity sha512-WAd2/DNcBh2zsDqtU1ePd9iYegIVFTmySsP/qm3aLwcx7Cqlsnb2ApGU+dHyf+S3vKfcuzVgJXyQcl9YX1GoMA==
   dependencies:
     "@cig-platform/types" "^0.0.14"
     "@testing-library/jest-dom" "^5.11.4"
