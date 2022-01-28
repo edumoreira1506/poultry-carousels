@@ -42,7 +42,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
 
   const formattedPoultries = useMemo(() => poultries.map((poultry) => ({
     ...poultry,
-    mainImage: poultry?.mainImage && createImageUrl({ folder: 'poultries', subfolder: 'images', filename: poultry?.mainImage })
+    mainImage: poultry?.mainImage ? createImageUrl({ folder: 'poultries', subfolder: 'images', filename: poultry?.mainImage }) : undefined
   })), [poultries])
 
   const handleClickImage = useCallback((poultryId: string) => {
@@ -60,7 +60,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
     setModalImages(files)
     setIsOpenModal(true)
   }, [formattedPoultries])
-  console.log({ formattedPoultries })
+
   return (
     <StyledContainer>
       <Modal isOpen={isOpenModal} onClose={handleCloseModal}>
