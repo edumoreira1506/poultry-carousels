@@ -4,6 +4,7 @@ import { ImageGallery, PoultriesCarousel as UIPoultriesCarousel, Modal } from '@
 import { StyledCarousel, StyledContainer, StyledTitle } from './PoultriesCarousel.styles'
 import { createImageUrl } from '../../utils/url'
 import { Poultry } from '../../hooks/useData'
+import { POULTRY_PLACEHOLDER_IMAGE_URL } from '../../constants/url'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -41,7 +42,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
 
   const formattedPoultries = useMemo(() => poultries.map((poultry) => ({
     ...poultry,
-    mainImage: createImageUrl({ folder: 'poultries', subfolder: 'images', filename: poultry?.mainImage }) ?? ''
+    mainImage: poultry?.mainImage && createImageUrl({ folder: 'poultries', subfolder: 'images', filename: poultry?.mainImage })
   })), [poultries])
 
   const handleClickImage = useCallback((poultryId: string) => {
@@ -59,7 +60,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
     setModalImages(files)
     setIsOpenModal(true)
   }, [formattedPoultries])
-
+  console.log({ formattedPoultries })
   return (
     <StyledContainer>
       <Modal isOpen={isOpenModal} onClose={handleCloseModal}>
@@ -73,6 +74,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
           poultries={formattedPoultries}
           onViewPoultry={onViewPoultry ? handleViewPoultry : undefined}
           onEditPoultry={onEditPoultry ? handleEditPoultry : undefined}
+          fallbackImage={POULTRY_PLACEHOLDER_IMAGE_URL}
         />
       </StyledCarousel>
     </StyledContainer>
