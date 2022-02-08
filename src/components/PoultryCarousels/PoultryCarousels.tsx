@@ -38,7 +38,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
     hasMales
   ])
 
-  if (showEmptyState) return <StyledEmptyState>Empty state</StyledEmptyState>
+  if (showEmptyState) return <StyledEmptyState>Não há aves registradas</StyledEmptyState>
 
   return (
     <>
