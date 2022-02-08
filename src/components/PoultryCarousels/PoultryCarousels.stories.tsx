@@ -35,3 +35,7 @@ Example.args = {
     ]
   }),
 }
+
+export const EmptyState = Template.bind({})
+EmptyState.args = {
+}

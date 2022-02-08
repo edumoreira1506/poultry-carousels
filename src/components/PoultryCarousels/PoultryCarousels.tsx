@@ -1,7 +1,9 @@
-import React, { VFC } from 'react'
+import React, { useMemo, VFC } from 'react'
 
 import PoultriesCarousel, { PoultriesCarouselProps } from '../PoultriesCarousel/PoultriesCarousel'
 import { Poultry } from '../../hooks/useData'
+
+import { StyledEmptyState } from './PoultryCarousels.styles'
 
 interface PoultryCarouselsProps {
   forSale?: Poultry[];
@@ -23,58 +25,74 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
   breederId,
   onViewPoultry,
   onEditPoultry
-}: PoultryCarouselsProps) => (
-  <>
-    {Boolean(forSale.length) && (
-      <PoultriesCarousel
-        breederId={breederId}
-        title='À Venda'
-        poultries={forSale}
-        onViewPoultry={onViewPoultry}
-        onEditPoultry={onEditPoultry}
-      />
-    )}
+}: PoultryCarouselsProps) => {
+  const hasForSale = useMemo(() => Boolean(forSale.length), [forSale.length])
+  const hasReproductives = useMemo(() => Boolean(reproductives.length), [reproductives.length])
+  const hasMatrixes = useMemo(() => Boolean(matrixes.length), [matrixes.length])
+  const hasMales = useMemo(() => Boolean(males.length), [males.length])
 
-    {Boolean(reproductives.length) && (
-      <PoultriesCarousel
-        breederId={breederId}
-        title='Reprodutores'
-        poultries={reproductives}
-        onViewPoultry={onViewPoultry}
-        onEditPoultry={onEditPoultry}
-      />
-    )}
+  const showEmptyState = useMemo(() => !hasForSale && !hasReproductives && !hasMatrixes && !hasMales, [
+    hasForSale,
+    hasReproductives,
+    hasMatrixes,
+    hasMales
+  ])
 
-    {Boolean(matrixes.length) && (
-      <PoultriesCarousel
-        breederId={breederId}
-        title='Matrizes'
-        poultries={matrixes}
-        onViewPoultry={onViewPoultry}
-        onEditPoultry={onEditPoultry}
-      />
-    )}
+  if (showEmptyState) return <StyledEmptyState>Não há aves registradas</StyledEmptyState>
 
-    {Boolean(males.length) && (
-      <PoultriesCarousel
-        breederId={breederId}
-        title='Frangos'
-        poultries={males}
-        onViewPoultry={onViewPoultry}
-        onEditPoultry={onEditPoultry}
-      />
-    )}
-
-    {Boolean(females.length) && (
-      <PoultriesCarousel
-        breederId={breederId}
-        title='Frangas'
-        poultries={females}
-        onViewPoultry={onViewPoultry}
-        onEditPoultry={onEditPoultry}
-      />
-    )}
-  </>
-)
+  return (
+    <>
+      {hasForSale && (
+        <PoultriesCarousel
+          breederId={breederId}
+          title='À Venda'
+          poultries={forSale}
+          onViewPoultry={onViewPoultry}
+          onEditPoultry={onEditPoultry}
+        />
+      )}
+  
+      {hasReproductives && (
+        <PoultriesCarousel
+          breederId={breederId}
+          title='Reprodutores'
+          poultries={reproductives}
+          onViewPoultry={onViewPoultry}
+          onEditPoultry={onEditPoultry}
+        />
+      )}
+  
+      {hasMatrixes && (
+        <PoultriesCarousel
+          breederId={breederId}
+          title='Matrizes'
+          poultries={matrixes}
+          onViewPoultry={onViewPoultry}
+          onEditPoultry={onEditPoultry}
+        />
+      )}
+  
+      {hasMales && (
+        <PoultriesCarousel
+          breederId={breederId}
+          title='Frangos'
+          poultries={males}
+          onViewPoultry={onViewPoultry}
+          onEditPoultry={onEditPoultry}
+        />
+      )}
+  
+      {Boolean(females.length) && (
+        <PoultriesCarousel
+          breederId={breederId}
+          title='Frangas'
+          poultries={females}
+          onViewPoultry={onViewPoultry}
+          onEditPoultry={onEditPoultry}
+        />
+      )}
+    </>
+  )
+}
 
 export default PoultryCarousels
