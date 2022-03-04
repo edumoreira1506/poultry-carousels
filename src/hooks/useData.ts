@@ -84,7 +84,7 @@ export default function useData(breederId: string) {
     data: { ...accumuledData, pagination: data?.data?.pagination },
     isLoading: data.isLoading,
     onPaginate: handlePaginate
-  }), [data?.data, data?.isLoading, handlePaginate])
+  }), [data?.data, data?.isLoading, handlePaginate, accumuledData])
 
   return formattedData
 }
