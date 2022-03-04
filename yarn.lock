@@ -1210,6 +1210,11 @@
   dependencies:
     axios "^0.22.0"
 
+"@cig-platform/enums@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@cig-platform/enums/-/enums-0.0.3.tgz#dcec8ec55ca30dff410041f27650326ce5ee7706"
+  integrity sha512-0wKd4Ub3ZTujimPEhc+68y1yu/NZwhpkZJRfTYrk24AmVH5vWWold+zQdK6pTWMQ/qQuCvtpBM1JdEEjZtG68w==
+
 "@cig-platform/factories@^0.0.13":
   version "0.0.13"
   resolved "https://registry.yarnpkg.com/@cig-platform/factories/-/factories-0.0.13.tgz#7425266b3beb75ca44e44cc3813e52bc46591487"
@@ -1225,13 +1230,6 @@
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/types@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.14.tgz#0ff5cf055a97da735b32ec4703f2f813306c063b"
-  integrity sha512-BLPzdGqZuDJWRjh/3jtHS1M6dMGJyKRZobnNhsSCbh/ZdnzYB1fKxGxsevXMe4ikQGlhSd60+T1zPsKHMJT+CQ==
-  dependencies:
-    express "^4.17.1"
-
 "@cig-platform/types@^0.0.22":
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.22.tgz#856e95719db4272374c15969975f357d6806e897"
@@ -1239,12 +1237,20 @@
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/ui@^0.1.101":
-  version "0.1.101"
-  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.101.tgz#a0bc630ce2cf60c9264bef6796a3243fb8120ba4"
-  integrity sha512-WAd2/DNcBh2zsDqtU1ePd9iYegIVFTmySsP/qm3aLwcx7Cqlsnb2ApGU+dHyf+S3vKfcuzVgJXyQcl9YX1GoMA==
+"@cig-platform/types@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.26.tgz#2cd27f1663027cd86d1aa7fea08e95364b5cc2e6"
+  integrity sha512-OkyuupHuMkNagkwiNrFJJGNUURzeOzB1RbwbagfnTxbKYLHqtjl16rBUQKXOD8X2jdQ5FWGC8vQwTvnHp0BH6w==
   dependencies:
-    "@cig-platform/types" "^0.0.14"
+    express "^4.17.1"
+
+"@cig-platform/ui@^0.1.130":
+  version "0.1.130"
+  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.130.tgz#c84b00ecf2ed51da466081e5dfb37721ba81b93a"
+  integrity sha512-fjmdD74WIw0yoct7NpzI51wilXMRECeAuRzq59OVInN8AY8e8ksOvJEcFUz1e5uOLQToPnsK4i6sT5n+Fp16Dg==
+  dependencies:
+    "@cig-platform/enums" "^0.0.3"
+    "@cig-platform/types" "^0.0.26"
     "@testing-library/jest-dom" "^5.11.4"
     "@testing-library/react" "^11.1.0"
     "@testing-library/user-event" "^12.1.10"
@@ -1253,6 +1259,7 @@
     "@types/react" "^17.0.0"
     "@types/react-dom" "^17.0.0"
     react "^17.0.2"
+    react-device-detect "^2.1.2"
     react-dom "^17.0.2"
     react-icons "^4.3.1"
     react-image-gallery "^1.2.7"
@@ -14087,6 +14094,13 @@ react-dev-utils@^12.0.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
+react-device-detect@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-2.1.2.tgz#60abb6fa361ec4cc839469a0c4c3e9b8ea17d6b5"
+  integrity sha512-N42xttwez3ECgu4KpOL2ICesdfoz8NCBfmc1rH9FRYSjH7NmMyANPSrQ3EvAtJyj/6TzJNhrANSO38iXjCB2Ug==
+  dependencies:
+    ua-parser-js "^0.7.30"
+
 react-docgen-typescript@^2.0.0:
   version "2.2.2"
   resolved "https://registry.npmjs.org/react-docgen-typescript/-/react-docgen-typescript-2.2.2.tgz"
@@ -16455,6 +16469,11 @@ typescript@^4.4.2:
   version "4.5.5"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz"
   integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
+
+ua-parser-js@^0.7.30:
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
+  integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
 
 uglify-js@^3.1.4:
   version "3.14.5"
