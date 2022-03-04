@@ -16,6 +16,7 @@ export type PoultriesCarouselProps = {
   breederId: string;
   onViewPoultry?: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
   onEditPoultry?: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
+  onFinishSlides?: () => void;
 }
 
 const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
@@ -23,7 +24,8 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
   title,
   breederId,
   onViewPoultry,
-  onEditPoultry
+  onEditPoultry,
+  onFinishSlides
 }: PoultriesCarouselProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [modalImages, setModalImages] = useState<{ original: string; thumbnail: string; }[]>([])
@@ -75,6 +77,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
           onViewPoultry={onViewPoultry ? handleViewPoultry : undefined}
           onEditPoultry={onEditPoultry ? handleEditPoultry : undefined}
           fallbackImage={POULTRY_PLACEHOLDER_IMAGE_URL}
+          onFinishSlides={onFinishSlides}
         />
       </StyledCarousel>
     </StyledContainer>
