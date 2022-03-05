@@ -14,6 +14,7 @@ interface PoultryCarouselsProps {
   breederId: string;
   onViewPoultry?: PoultriesCarouselProps['onViewPoultry'];
   onEditPoultry?: PoultriesCarouselProps['onEditPoultry'];
+  onFinishSlides: (type: string) => void;
 }
 
 const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
@@ -24,7 +25,8 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
   females = [],
   breederId,
   onViewPoultry,
-  onEditPoultry
+  onEditPoultry,
+  onFinishSlides
 }: PoultryCarouselsProps) => {
   const hasForSale = useMemo(() => Boolean(forSale.length), [forSale.length])
   const hasReproductives = useMemo(() => Boolean(reproductives.length), [reproductives.length])
@@ -49,6 +51,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           poultries={forSale}
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
+          onFinishSlides={() => onFinishSlides('forSale')}
         />
       )}
   
@@ -59,6 +62,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           poultries={reproductives}
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
+          onFinishSlides={() => onFinishSlides('reproductives')}
         />
       )}
   
@@ -69,6 +73,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           poultries={matrixes}
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
+          onFinishSlides={() => onFinishSlides('matrixes')}
         />
       )}
   
@@ -79,6 +84,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           poultries={males}
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
+          onFinishSlides={() => onFinishSlides('males')}
         />
       )}
   
@@ -89,6 +95,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           poultries={females}
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
+          onFinishSlides={() => onFinishSlides('females')}
         />
       )}
     </>

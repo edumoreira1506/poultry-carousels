@@ -1193,14 +1193,14 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cig-platform/content-search-client@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@cig-platform/content-search-client/-/content-search-client-0.0.11.tgz#d3a6ac75fefec0717def19bd9daab84acde67acf"
-  integrity sha512-ZK6bYccuZucwhKmTFLe1trmpu7vYaEMBsKMz4om41AB4fi9siLaI49l3zfOlgibFeEEPz3Iype1hikDP9IfVcw==
+"@cig-platform/content-search-client@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@cig-platform/content-search-client/-/content-search-client-0.0.14.tgz#ab319a90075ebb84e7a9f21e23c8ddc8c3f6fe4e"
+  integrity sha512-8JPH6CKc31vmQdIx6KHWCN1+QIlyrlneNKgyLgTSgTLEJ21woDMRZnyKbLGETkm2YqHRAtWPAGC5Mdcct4g2yQ==
   dependencies:
     "@babel/plugin-proposal-decorators" "^7.16.4"
     "@cig-platform/decorators" "^0.0.1"
-    "@cig-platform/types" "^0.0.21"
+    "@cig-platform/types" "^0.0.22"
     axios "^0.24.0"
 
 "@cig-platform/decorators@^0.0.1":
@@ -1209,6 +1209,11 @@
   integrity sha512-gJXseewZipGW7ONTVH566/YwkGIGn5fHKZD8BNrxDKMZVuQjw+764hElgujXg3q0D4u2Mw4rmhup7Ft5sWfhqQ==
   dependencies:
     axios "^0.22.0"
+
+"@cig-platform/enums@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@cig-platform/enums/-/enums-0.0.3.tgz#dcec8ec55ca30dff410041f27650326ce5ee7706"
+  integrity sha512-0wKd4Ub3ZTujimPEhc+68y1yu/NZwhpkZJRfTYrk24AmVH5vWWold+zQdK6pTWMQ/qQuCvtpBM1JdEEjZtG68w==
 
 "@cig-platform/factories@^0.0.13":
   version "0.0.13"
@@ -1225,19 +1230,27 @@
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/types@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.14.tgz#0ff5cf055a97da735b32ec4703f2f813306c063b"
-  integrity sha512-BLPzdGqZuDJWRjh/3jtHS1M6dMGJyKRZobnNhsSCbh/ZdnzYB1fKxGxsevXMe4ikQGlhSd60+T1zPsKHMJT+CQ==
+"@cig-platform/types@^0.0.22":
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.22.tgz#856e95719db4272374c15969975f357d6806e897"
+  integrity sha512-2IC/1uoaQOzZkOacNzeBBz2VE4yLMgiUSZ+rDax/wdCaXN2c229bH7zbJiOJ0l39ErUFdSlnE9BJAGLdYLOnRw==
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/ui@^0.1.101":
-  version "0.1.101"
-  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.101.tgz#a0bc630ce2cf60c9264bef6796a3243fb8120ba4"
-  integrity sha512-WAd2/DNcBh2zsDqtU1ePd9iYegIVFTmySsP/qm3aLwcx7Cqlsnb2ApGU+dHyf+S3vKfcuzVgJXyQcl9YX1GoMA==
+"@cig-platform/types@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.26.tgz#2cd27f1663027cd86d1aa7fea08e95364b5cc2e6"
+  integrity sha512-OkyuupHuMkNagkwiNrFJJGNUURzeOzB1RbwbagfnTxbKYLHqtjl16rBUQKXOD8X2jdQ5FWGC8vQwTvnHp0BH6w==
   dependencies:
-    "@cig-platform/types" "^0.0.14"
+    express "^4.17.1"
+
+"@cig-platform/ui@^0.1.131":
+  version "0.1.131"
+  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.131.tgz#87b885b533329ca60a16e3b5422279b9d7da1739"
+  integrity sha512-lCJ0IBa1NUaW+EMuY9j317d9RLoOSYUtn+myaXWJ6v2l3rwUKhwemhvTyMV1eGEpYk65W88AA/gfkeetiRHYaw==
+  dependencies:
+    "@cig-platform/enums" "^0.0.3"
+    "@cig-platform/types" "^0.0.26"
     "@testing-library/jest-dom" "^5.11.4"
     "@testing-library/react" "^11.1.0"
     "@testing-library/user-event" "^12.1.10"
@@ -1246,6 +1259,7 @@
     "@types/react" "^17.0.0"
     "@types/react-dom" "^17.0.0"
     react "^17.0.2"
+    react-device-detect "^2.1.2"
     react-dom "^17.0.2"
     react-icons "^4.3.1"
     react-image-gallery "^1.2.7"
@@ -14080,6 +14094,13 @@ react-dev-utils@^12.0.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
+react-device-detect@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-2.1.2.tgz#60abb6fa361ec4cc839469a0c4c3e9b8ea17d6b5"
+  integrity sha512-N42xttwez3ECgu4KpOL2ICesdfoz8NCBfmc1rH9FRYSjH7NmMyANPSrQ3EvAtJyj/6TzJNhrANSO38iXjCB2Ug==
+  dependencies:
+    ua-parser-js "^0.7.30"
+
 react-docgen-typescript@^2.0.0:
   version "2.2.2"
   resolved "https://registry.npmjs.org/react-docgen-typescript/-/react-docgen-typescript-2.2.2.tgz"
@@ -16448,6 +16469,11 @@ typescript@^4.4.2:
   version "4.5.5"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz"
   integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
+
+ua-parser-js@^0.7.30:
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
+  integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
 
 uglify-js@^3.1.4:
   version "3.14.5"

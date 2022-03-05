@@ -15,7 +15,7 @@ const PoultryCarouselsContainer: VFC<PoultryCarouselsContainerProps> = ({
   onViewPoultry,
   onEditPoultry
 }: PoultryCarouselsContainerProps) => {
-  const { data, isLoading } = useData(breederId)
+  const { data, isLoading, onPaginate } = useData(breederId)
 
   if (isLoading) return null
 
@@ -29,6 +29,7 @@ const PoultryCarouselsContainer: VFC<PoultryCarouselsContainerProps> = ({
       females={data?.females}
       onViewPoultry={onViewPoultry}
       onEditPoultry={onEditPoultry}
+      onFinishSlides={onPaginate}
     />
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { poultryFactory } from '@cig-platform/factories'
 
 import PoultryCarousels from './PoultryCarousels'
@@ -34,8 +35,14 @@ Example.args = {
       }
     ]
   }),
+  onFinishSlides: action('onFinishSlides'),
+  onViewPoultry: action('onViewPoultry'),
+  onEditPoultry: action('onEditPoultry'),
 }
 
 export const EmptyState = Template.bind({})
 EmptyState.args = {
+  onFinishSlides: action('onFinishSlides'),
+  onViewPoultry: action('onViewPoultry'),
+  onEditPoultry: action('onEditPoultry'),
 }
