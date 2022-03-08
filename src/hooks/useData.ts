@@ -7,6 +7,7 @@ import ContentSearchClient from '../clients/ContentSearchClient'
 export interface Poultry extends IPoultry {
   mainImage: string;
   images: IPoultryImage[];
+  forSale: boolean;
 }
 
 interface DataPagination {

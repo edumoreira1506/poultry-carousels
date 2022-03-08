@@ -32,12 +32,14 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
   const hasReproductives = useMemo(() => Boolean(reproductives.length), [reproductives.length])
   const hasMatrixes = useMemo(() => Boolean(matrixes.length), [matrixes.length])
   const hasMales = useMemo(() => Boolean(males.length), [males.length])
+  const hasFemales = useMemo(() => Boolean(females.length), [females.length])
 
-  const showEmptyState = useMemo(() => !hasForSale && !hasReproductives && !hasMatrixes && !hasMales, [
+  const showEmptyState = useMemo(() => !hasForSale && !hasReproductives && !hasMatrixes && !hasMales && !hasFemales, [
     hasForSale,
     hasReproductives,
     hasMatrixes,
-    hasMales
+    hasMales,
+    hasFemales
   ])
 
   if (showEmptyState) return <StyledEmptyState>Não há aves registradas</StyledEmptyState>
