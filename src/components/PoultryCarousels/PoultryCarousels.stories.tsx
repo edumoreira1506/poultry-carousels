@@ -12,29 +12,31 @@ export default {
 
 const Template: ComponentStory<typeof PoultryCarousels> = (args) => <PoultryCarousels {...args} />
 
+const poultries = [
+  {
+    ...poultryFactory(),
+    mainImage: '1647637912039-2021-11-06_21-21.png',
+    images: []
+  },
+  {
+    ...poultryFactory(),
+    mainImage: '1647637935572-2021-11-06_21-21_3.png',
+    images: []
+  },
+  {
+    ...poultryFactory(),
+    mainImage: '1647637864964-2021-11-06_21-19_2.png',
+    images: []
+  }
+]
+
 export const Example = Template.bind({})
 Example.args = {
-  forSale: Array(10).fill({
-    ...poultryFactory(),
-    mainImage: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg',
-    images: [
-      {
-        id: '',
-        poultryId: '',
-        imageUrl: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg'
-      },
-      {
-        id: '',
-        poultryId: '',
-        imageUrl: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg'
-      },
-      {
-        id: '',
-        poultryId: '',
-        imageUrl: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg'
-      }
-    ]
-  }),
+  forSale: poultries,
+  reproductives: poultries,
+  matrixes: poultries,
+  females: poultries,
+  males: poultries,
   onFinishSlides: action('onFinishSlides'),
   onViewPoultry: action('onViewPoultry'),
   onEditPoultry: action('onEditPoultry'),
