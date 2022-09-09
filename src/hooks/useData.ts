@@ -1,6 +1,6 @@
 import { IPoultry, IPoultryImage } from '@cig-platform/types'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useQuery } from 'react-query'
+import { useData as useDataFromDataHelper } from '@cig-platform/data-helper'
 
 import ContentSearchClient from '../clients/ContentSearchClient'
 
@@ -46,9 +46,11 @@ export default function useData(breederId: string) {
     matrixes: [],
   })
 
-  const data = useQuery<Data>(
-    ['getPoultryData', breederId],
-    () => ContentSearchClient.getBreederPoultries(breederId, pagination)
+  const data = useDataFromDataHelper<Data>(
+    'getPoultryData',
+    () => ContentSearchClient.getBreederPoultries(breederId, pagination),
+    [breederId, ...Object.values(pagination).filter(Boolean)],
+    {}
   )
 
   const handlePaginate = useCallback((type: string) => {
@@ -66,11 +68,36 @@ export default function useData(breederId: string) {
   useEffect(() => {
     if (data?.data) {
       setAccumuledData(prevAccumuledData => ({
-        females: [...prevAccumuledData.females, ...data.data.females],
-        forSale: [...prevAccumuledData.forSale, ...data.data.forSale],
-        matrixes: [...prevAccumuledData.matrixes, ...data.data.matrixes],
-        males: [...prevAccumuledData.males, ...data.data.males],
-        reproductives: [...prevAccumuledData.reproductives, ...data.data.reproductives],
+        females: [
+          ...prevAccumuledData.females,
+          ...data.data.females.filter(a =>
+            prevAccumuledData.females.every(pA => pA.id !== a.id)
+          )
+        ],
+        forSale: [
+          ...prevAccumuledData.forSale,
+          ...data.data.forSale.filter(a =>
+            prevAccumuledData.forSale.every(pA => pA.id !== a.id)
+          )
+        ],
+        matrixes: [
+          ...prevAccumuledData.matrixes,
+          ...data.data.matrixes.filter(a =>
+            prevAccumuledData.matrixes.every(pA => pA.id !== a.id)
+          )
+        ],
+        males: [
+          ...prevAccumuledData.males,
+          ...data.data.males.filter(a =>
+            prevAccumuledData.males.every(pA => pA.id !== a.id)
+          )
+        ],
+        reproductives: [
+          ...prevAccumuledData.reproductives,
+          ...data.data.reproductives.filter(a =>
+            prevAccumuledData.reproductives.every(pA => pA.id !== a.id)
+          )
+        ],
       }))
     }
   }, [data?.data])
