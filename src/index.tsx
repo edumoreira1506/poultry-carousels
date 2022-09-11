@@ -4,7 +4,7 @@ import { QueryClientProvider } from 'react-query'
 import { queryClient } from '@cig-platform/data-helper'
 
 import PoultryCarouselsContainer, { PoultryCarouselsContainerProps } from './containers/PoultryCarouselsContainer/PoultryCarouselsContainer'
-import { Fragment, useMemo } from 'react'
+import { Fragment } from 'react'
 
 type Params = {
   breederId: string;
@@ -23,7 +23,7 @@ type Callbacks = {
 ) => {
   const targetDocument = document.getElementById(containerId)
 
-  const LinkComponent = useMemo(() => params?.linkComponent ?? Fragment, [])
+  const LinkComponent = params?.linkComponent ?? Fragment
 
   if (targetDocument) {
     ReactDOM.render(
