@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { render, screen } from '@testing-library/react'
 
 import PoultryCarousels from './PoultryCarousels'
@@ -7,6 +7,7 @@ import { poultryFactory } from '@cig-platform/factories'
 const DEFAULT_PROPS = {
   onFinishSlides: jest.fn(),
   breederId: '',
+  linkComponent: Fragment
 }
 
 describe('<PoultryCarousels />', () => {
