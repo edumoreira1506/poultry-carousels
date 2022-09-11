@@ -11,7 +11,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 type LinkComponentProps = {
   identifier: 'view-advertising';
-  params?: { identifier?: string }
+  params?: { poultryId?: string }
 };
 
 
