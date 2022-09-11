@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, VFC } from 'react'
+import React, { FC, useCallback, useMemo, VFC } from 'react'
 import { PoultriesCarousel as UIPoultriesCarousel } from '@cig-platform/ui'
 
 import { StyledCarousel, StyledContainer, StyledTitle } from './PoultriesCarousel.styles'
@@ -9,9 +9,16 @@ import { POULTRY_PLACEHOLDER_IMAGE_URL } from '../../constants/url'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+type LinkComponentProps = {
+  identifier: 'view-advertising';
+  params?: { poultryId?: string }
+};
+
+
 export type PoultriesCarouselProps = {
   poultries?: Poultry[];
   title: string;
+  linkComponent: FC<LinkComponentProps>;
   breederId: string;
   onViewPoultry?: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
   onEditPoultry?: ({ breederId, poultryId }: { breederId: string, poultryId: string }) => void;
@@ -24,7 +31,8 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
   breederId,
   onViewPoultry,
   onEditPoultry,
-  onFinishSlides
+  onFinishSlides,
+  linkComponent
 }: PoultriesCarouselProps) => {
   if (!poultries.length) return null
 
@@ -51,6 +59,7 @@ const PoultriesCarousel: VFC<PoultriesCarouselProps> = ({
           onEditPoultry={onEditPoultry ? handleEditPoultry : undefined}
           fallbackImage={POULTRY_PLACEHOLDER_IMAGE_URL}
           onFinishSlides={onFinishSlides}
+          linkComponent={linkComponent}
         />
       </StyledCarousel>
     </StyledContainer>

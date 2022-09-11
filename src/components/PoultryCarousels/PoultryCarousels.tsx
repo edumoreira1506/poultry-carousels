@@ -5,7 +5,7 @@ import { Poultry } from '../../hooks/useData'
 
 import { StyledEmptyState } from './PoultryCarousels.styles'
 
-interface PoultryCarouselsProps {
+export interface PoultryCarouselsProps {
   forSale?: Poultry[];
   reproductives?: Poultry[];
   matrixes?: Poultry[];
@@ -15,6 +15,7 @@ interface PoultryCarouselsProps {
   onViewPoultry?: PoultriesCarouselProps['onViewPoultry'];
   onEditPoultry?: PoultriesCarouselProps['onEditPoultry'];
   onFinishSlides: (type: string) => void;
+  linkComponent: PoultriesCarouselProps['linkComponent']
 }
 
 const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
@@ -26,7 +27,8 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
   breederId,
   onViewPoultry,
   onEditPoultry,
-  onFinishSlides
+  onFinishSlides,
+  linkComponent
 }: PoultryCarouselsProps) => {
   const hasForSale = useMemo(() => Boolean(forSale.length), [forSale.length])
   const hasReproductives = useMemo(() => Boolean(reproductives.length), [reproductives.length])
@@ -54,6 +56,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
           onFinishSlides={() => onFinishSlides('forSale')}
+          linkComponent={linkComponent}
         />
       )}
   
@@ -65,6 +68,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
           onFinishSlides={() => onFinishSlides('reproductives')}
+          linkComponent={linkComponent}
         />
       )}
   
@@ -76,6 +80,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
           onFinishSlides={() => onFinishSlides('matrixes')}
+          linkComponent={linkComponent}
         />
       )}
   
@@ -87,6 +92,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
           onFinishSlides={() => onFinishSlides('males')}
+          linkComponent={linkComponent}
         />
       )}
   
@@ -98,6 +104,7 @@ const PoultryCarousels: VFC<PoultryCarouselsProps> = ({
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
           onFinishSlides={() => onFinishSlides('females')}
+          linkComponent={linkComponent}
         />
       )}
     </>

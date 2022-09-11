@@ -1306,14 +1306,21 @@
   dependencies:
     express "^4.17.3"
 
-"@cig-platform/ui@^0.1.151":
-  version "0.1.151"
-  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.151.tgz#0fac61dd9b6e151cac7ca33fd6cb188e2164b714"
-  integrity sha512-WuQKrU+YHHuCsR0pWHNfzyhAQnuWHOJy0LUVYwRGtu6OklQbqladgLadVs8P9RGLzrINr2iouSOZvrb2UA6GsQ==
+"@cig-platform/types@^0.0.43":
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.43.tgz#5893eb718d738b374e42cb2cbee330c65e38b3b1"
+  integrity sha512-ftq7SaUTgVApmWtbowrgWcrEaqU0a5VspnJs8KKbONat+NvWcFt+Bq91VKJvnq9qlh5qr6pwC+vi+i6EzQ1OKA==
+  dependencies:
+    express "^4.17.3"
+
+"@cig-platform/ui@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.2.6.tgz#6edd6195c58d7ca5ae14856635b62294fe8138cb"
+  integrity sha512-F/mIy0NpREfPkQOl0aAKDdt0/cH01Vqs+O5wu5rNm3HOG196huCfJ/PzR738xSkWOt9vd6zQ3YGT117QOXn5Cw==
   dependencies:
     "@cig-platform/enums" "^0.0.5"
     "@cig-platform/factories" "^0.0.22"
-    "@cig-platform/types" "^0.0.41"
+    "@cig-platform/types" "^0.0.43"
     "@testing-library/jest-dom" "^5.16.2"
     "@testing-library/react" "^12.1.3"
     "@testing-library/user-event" "^13.5.0"
@@ -1322,10 +1329,9 @@
     "@types/react" "^17.0.39"
     "@types/react-dom" "^17.0.13"
     postcss-normalize "^10.0.1"
-    react "^17.0.2"
     react-datepicker "^4.8.0"
     react-device-detect "^2.1.2"
-    react-dom "^17.0.2"
+    react-family-tree "^3.2.0"
     react-icons "^4.3.1"
     react-image-gallery "^1.2.7"
     react-modal "^3.14.4"
@@ -1334,7 +1340,6 @@
     react-scripts "5.0.0"
     react-slick "^0.28.1"
     slick-carousel "^1.8.1"
-    styled-components "^5.3.3"
     web-vitals "^2.1.4"
 
 "@cnakazawa/watch@^1.0.3":
@@ -12074,6 +12079,13 @@ react-error-overlay@^6.0.10:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.10.tgz#0fe26db4fa85d9dbb8624729580e90e7159a59a6"
   integrity sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA==
 
+react-family-tree@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-family-tree/-/react-family-tree-3.2.0.tgz#60be2e4edd3fc166f4fb7e2285f922a9457cec6a"
+  integrity sha512-TCoLWPSLoP89CpfzK7vTxA2Ss0Qu6PuusdwjuLHeSrYiQfW6PLYCc8wTidRfKTjH+4FueF5OLMolj7rhh+c3MA==
+  dependencies:
+    relatives-tree "3.2.x"
+
 react-fast-compare@^3.0.1, react-fast-compare@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
@@ -12485,6 +12497,11 @@ relateurl@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
+relatives-tree@3.2.x:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/relatives-tree/-/relatives-tree-3.2.0.tgz#9c309ac6250f487c39007dabbf61eaf52f2c5fcc"
+  integrity sha512-orxhI+jECes1VTfF7TLUVlDW7uWFGKyrmYtbUyrQNOYry+Jt+WZeYhrq5q7Axl2l0o1vABEew6xaKNMZEnzdQw==
 
 remark-external-links@^8.0.0:
   version "8.0.0"
