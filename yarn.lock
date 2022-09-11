@@ -1313,10 +1313,10 @@
   dependencies:
     express "^4.17.3"
 
-"@cig-platform/ui@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.2.5.tgz#06b0c2a69e30a48c0ac69cb115c841927974efc3"
-  integrity sha512-15hqdPrt/08vaT9lSXIjBbsWmJIGzMHzn+OQxJ8sjhtPyY9lggMv1EJThaYF8Lfn0EQxyf1LMgZuhqZPjN+ADA==
+"@cig-platform/ui@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.2.6.tgz#6edd6195c58d7ca5ae14856635b62294fe8138cb"
+  integrity sha512-F/mIy0NpREfPkQOl0aAKDdt0/cH01Vqs+O5wu5rNm3HOG196huCfJ/PzR738xSkWOt9vd6zQ3YGT117QOXn5Cw==
   dependencies:
     "@cig-platform/enums" "^0.0.5"
     "@cig-platform/factories" "^0.0.22"
